@@ -35,26 +35,28 @@
     <script type="text/javascript">
         window.__sourceMap = <%= JSON.stringify(htmlWebpackPlugin.files.sourceMap) %>;
     </script>
-    <script type="text/javascript">
-        var hash = location.hash;
-        var query = hash.split('?')[1] || '';
-        var ch = /ch=([^=]*)/.exec(query);
-        var channel = ch && ch[1] || '';
-        var Omega = {
-            productName: 'omega0c2473728f',
-            channel: channel
-            //openid: wxopenid//0.2.4的版本在微信中会判断是否有openid，如果没有就不会发任何pv和event
-        };
-    </script>
-    <script type="text/javascript" src="//webapp.didistatic.com/static/webapp/shield/z/omega/omega/0.2.3/omega.min.js"></script>
-    
+    <% if(htmlWebpackPlugin.options.inject) { %>
+       <% _.forEach(htmlWebpackPlugin.options.assets.css, function(css) { %>
+           <% if(js.key == 'todos_scss.css') { %>
+                <script type="text/javascript" src="<%- css.url %>"></script>
+            <%};%>
+        <% }); %>
+    <% } %>
 <body data-ctr-page = "pageview" class="fullscreen">
 <div id="application" class="view" ></div>
 <div style="width:0;height:0">
     <% if(htmlWebpackPlugin.options.inject) { %>
        <% _.forEach(htmlWebpackPlugin.options.assets.js, function(js) { %>
-        <script type="text/javascript" src="<%- js.url %>"></script>
+           <% if(js.key == 'todos.js') { %>
+                <script type="text/javascript" src="<%- js.url %>"></script>
+            <%};%>
         <% }); %>
+        <% _.forEach(htmlWebpackPlugin.options.assets.js, function(js) { %>
+           <% if(js.key == 'todos_lib.js') { %>
+                <script type="text/javascript" src="<%- js.url %>"></script>
+            <%};%>
+        <% }); %>
+
     <% } else { %>
         <script type="text/javascript">
         (function(){
