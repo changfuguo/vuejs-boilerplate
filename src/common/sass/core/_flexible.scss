@@ -1,0 +1,128 @@
+$dpr-list: 1 2 2.5 2.75 3;
+
+@mixin fontsize($px){
+    @if type-of($px) == "number" and unit($px) == ""{
+        $px: $px * 1px;
+    }
+    font-size: $px/$baseFontSize/2 * 100%;
+}
+
+
+// list-separator polyfill by Hugo Giraudel (https://sass-compatibility.github.io/#list_separator_function)
+@function rem-separator($list) {
+  @if function-exists("list-separator") == true {
+    @return list-separator($list);
+  }
+
+  $test-list: ();
+  @each $item in $list {
+    $test-list: append($test-list, $item, space);
+  }
+
+  @return if($test-list == $list, space, comma);
+}
+
+@mixin rem-baseline($zoom: 100%) {
+  font-size: $zoom / 16px * $remBaseFontSize;
+}
+
+@function rem-convert($to, $values...) {
+  $result: ();
+  $separator: rem-separator($values);
+
+  @each $value in $values {
+    @if type-of($value) == "number" and unit($value) == ""{
+        $value: $value * 1px;
+    }
+    @if type-of($value) == "number" and unit($value) == "rem" and $to == "px" {
+      $result: append($result, $value / 1rem * $remBaseFontSize, $separator);
+    } @else if type-of($value) == "number" and unit($value) == "px" and $to == "rem" {
+      $result: append($result, $value / ($remBaseFontSize / 1rem), $separator);
+    } @else if type-of($value) == "list" {
+      $result: append($result, rem-convert($to, $value...), $separator);
+    } @else {
+      $result: append($result, $value, $separator);
+    }
+  }
+
+  @return $result;
+}
+
+@function rem($values...) {
+  @if $remPxOnly {
+    @return rem-convert(px, $values...);
+  } @else {
+    @return rem-convert(rem, $values...);
+  }
+}
+
+@mixin rem($properties, $values...) {
+  @if type-of($properties) == "map" {
+    @each $property in map-keys($properties) {
+      @include rem($property, map-get($properties, $property));
+    }
+  } @else {
+    @each $property in $properties {
+      @if $remFallback or $remPxOnly {
+        #{$property}: rem-convert(px, $values...);
+      }
+      @if not $remPxOnly{
+        #{$property}: rem-convert(rem, $values...);
+      }
+    }
+  }
+}
+
+/**
+ calculate accurate pixel size for different device-pixel-ratio
+ usage:
+ 1. basic: specify a property and its value each time
+    @include dpr(font-size, 16px);
+    @include dpr(bottom, 1px);
+
+ 2. advanced: specify a map for multiple property-value pair
+    @include dpr($properties:(
+        font-size: 16px,
+        bottom: 1px
+    ));
+*/
+
+@mixin dpr($properties, $size: 1px){
+  $is_negative: if($size>0, 1, -1);;
+  @each $dpr in $dpr-list {
+    @if type-of($properties) == "map" {
+      [data-dpr="#{$dpr}"] & {
+        @each $property in map-keys($properties) {
+          $tmpVal: map-get($properties, $property) * $dpr;
+          $is_negative: if($tmpVal>0, 1, -1);
+          #{$property}: if(abs($tmpVal) >= 1 or $tmpVal==0, $tmpVal, $is_negative*1px);
+        }
+      }
+    } @else {
+
+      [data-dpr="#{$dpr}"] & {
+        @each $property in $properties {
+
+          #{$property}: if(abs($size * $dpr)>=1 or $size==0, $size*$dpr, $is_negative*1px);
+        }
+      }
+    }
+  }
+}
+
+// for mixin font-size 
+
+@mixin font-dpr($font-size){
+    @if type-of($font-size) == "number" and unit($font-size) == ""{
+        $font-size: $font-size * 1px;
+    }
+  @include dpr(font-size, $font-size);
+}
+
+@mixin transform-dpr() {
+  @each $dpr in $dpr-list {
+    [data-dpr="#{$dpr}"] & {
+      @include transform(scale($dpr));
+    }
+  }
+}

@@ -1,0 +1,247 @@
+@charset "UTF-8";
+//-----------------------------------------------------	
+// base scss
+// 提供所有的基础功能包括：变量设置，css3前缀填充，@media，基础mixin，栅格化grid，reset样式
+// 默认会输出reset样式一份
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+// author:      结一 (http://weibo.com/marvin1023)
+// version:     3.0
+// time:        2014-02-08
+// url:         https://github.com/marvin1023/sassCore/    http://tobe.w3cplus.com/
+//-----------------------------------------------------
+
+// 导入core中的基础文件
+//-----------------------------------------------------
+@import "core/index";
+@import "icon";
+
+
+// 基准字体走魔方的字体
+@font-face {
+    font-family:home-icon;src:url(//webapp.didistatic.com/static/webapp/shield/z/mofang-webapp/mofang-webapp/0.1.25/ffdca82ff330dc78403affd5e07c5751.eot);src:url(//webapp.didistatic.com/static/webapp/shield/z/mofang-webapp/mofang-webapp/0.1.25/ffdca82ff330dc78403affd5e07c5751.eot#iefix) format('embedded-opentype'),url(data:application/font-woff;base64,bW9kdWxlLmV4cG9ydHMgPSBfX3dlYnBhY2tfcHVibGljX3BhdGhfXyArICIzZjM1NWQ4MTI4NjM3ZTZmNTBmZDMwNTEzNDY0MjQ1YS53b2ZmIjs=) format('woff'),url(//webapp.didistatic.com/static/webapp/shield/z/mofang-webapp/mofang-webapp/0.1.25/b1e6ac2a3e7a4d19f2bed090c8c8d16b.ttf) format('truetype'),url(//webapp.didistatic.com/static/webapp/shield/z/mofang-webapp/mofang-webapp/0.1.25/1b9fc804f005646d4508a2acd9225f0b.svg#home-icon) format('svg');font-weight:400;font-style:normal
+}
+
+
+/*
+@if $exportBodyFont == true {
+    [data-dpr="1"] body{
+        font-size: $baseFontSize;
+    }
+    [data-dpr="2"] body{
+        font-size: $baseFontSize * 2;
+    }
+    [data-dpr="2.5"] body{
+        font-size: $baseFontSize * 2.5;
+    }
+    [data-dpr="2.75"] body{
+        font-size: $baseFontSize * 2.75;
+    }
+    [data-dpr="3"] body{
+        font-size: $baseFontSize * 3;
+    }
+}
+*/
+
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 5px;
+    background-color: rgba(125, 125, 125, 0.7);
+    -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    width: 5px;
+    background-color: rgba(125, 125, 125, 0.7);
+    -webkit-border-radius: 6px;
+}
+
+
+
+*:not(input,textarea) {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+html, body{
+    background: $bodyBgColor;
+    color:$textColor;
+    width: 100%;
+    height:100%;
+    padding:0;
+    margin:0;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+[data-ctr-page=pageview]{
+    width:100%;
+    position:relative;
+}
+[data-ctr-page=pageview].fullscreen{
+    height:100%;
+    overflow:hidden;
+}
+[data-ctr-page=pageview] .view{
+    width:100%;
+}
+[data-ctr-page=pageview].fullscreen  .view{
+}
+[data-ctr-page=pageview] .wrapper{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+
+.delayload{
+    background-color:#ebedf0;
+    background-image:url(//m.baidu.com/static/ala/lbs/morentn.png);
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-clip:content-box;
+}
+
+/*
+* css3盒模型一些定义  
+*
+**/
+.flexbox {
+    @include display-flex(flex);
+    width:100%;
+}
+.flexbox > *:not(.flexbox){
+    display:block;
+}
+.border-box{
+    @include box-sizing(border-box);    
+}
+.flex-one{
+    @include flex(1);
+    width:0;  
+}
+.justify{
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    @include align-items(center);
+}
+
+.center {
+    @include flex-direction(row);
+    @include justify-content(center);
+    @include align-items(center);
+}
+.left {
+    @include flex-direction(row);
+    @include justify-content(flex-start);
+    @include align-items(center);
+}
+.right {
+    @include flex-direction(row);
+    @include justify-content(flex-end);
+    @include align-items(center);
+}
+/*
+*  常用省略号的一些定
+**/
+.hide{
+    display:none;
+}
+.show{
+    display:block;
+}
+.text-ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.text-line-ellipse {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+}
+.text-onelines{
+    -webkit-line-clamp: 1;
+}
+.text-twolines{
+    -webkit-line-clamp: 2;
+}
+.text-threelines{
+    -webkit-line-clamp: 3;
+}
+.gap{
+    display:block;
+    width: 100%;
+    height:rem(16px);
+    background:transparent;
+}
+
+
+
+.border-bottom{
+    @include dpr2-border(bottom, 1px, solid, rgba(#fff, .1));
+}
+
+
+.border-top{
+    @include dpr2-border(top, 1px, solid, rgba(#fff, .1));
+}
+
+.border-left{
+    @include dpr2-border(left, 1px, solid, rgba(#fff, .1));
+}
+
+
+.border-right{
+    @include dpr2-border(right, 1px,  solid, rgba(#fff, .1));
+}
+
+.border-top-bottom{
+    @include dpr2-border-top(1px, solid, rgba(#fff, .1));
+    @include dpr2-border-bottom(1px, solid, rgba(#fff, .1));
+}
+.didi-page{
+    height: 100%;
+    width:100%;
+    position:relative;
+    background-color: rgba(248,248,248,1);
+}
+.didi-layer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 998;
+    background-color: rgba(0,0,0,0.48);
+
+    .didi-wrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+    }
+}
+#app{
+    width:100%;
+    height:100%;
+    position:relative;
+    overflow:hidden;
+
+}

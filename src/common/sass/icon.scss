@@ -1,0 +1,271 @@
+@font-face {
+	font-family:didiico;src:url(//webapp.didistatic.com/static/webapp/shield/z/mofang-icons/mofang-icons/2747fa04b0256dcfd3ad8da3c9c85717.ttf) format("truetype"),url(data:application/font-woff;base64,bW9kdWxlLmV4cG9ydHMgPSBfX3dlYnBhY2tfcHVibGljX3BhdGhfXyArICJhY2Q5MGQ1Y2NlNmZkMTMxYzAyZTllZGE2OWE3MzcyNi53b2ZmIjs=) format("woff"),url(//webapp.didistatic.com/static/webapp/shield/z/mofang-icons/mofang-icons/12e1a2d8026782ab49349e53cc321073.svg#didiico) format("svg");font-weight:400;font-style:normal
+}
+
+.didi-icons {
+	font-family: didiico!important;
+	speak: none;
+	font-style: normal;
+	font-weight: 400;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+
+.didi-icons-d:before {
+	content: "\E93F"
+}
+
+.didi-icons-location:before {
+	content: "\E93E"
+}
+
+.didi-icons-add:before {
+	content: "\E900"
+}
+
+.didi-icons-arrow_close:before {
+	content: "\E901"
+}
+
+.didi-icons-arrow_down:before {
+	content: "\E902"
+}
+
+.didi-icons-arrow_lift:before {
+	content: "\E903"
+}
+
+.didi-icons-arrow_open:before {
+	content: "\E904"
+}
+
+.didi-icons-arrow_right:before {
+	content: "\E905"
+}
+
+.didi-icons-arrow_up:before {
+	content: "\E906"
+}
+
+.didi-icons-business:before {
+	content: "\E907"
+}
+
+.didi-icons-close:before {
+	content: "\E908"
+}
+
+.didi-icons-close2:before {
+	content: "\E909"
+}
+
+.didi-icons-community:before {
+	content: "\E90A"
+}
+
+.didi-icons-complaint:before {
+	content: "\E90B"
+}
+
+.didi-icons-coupon:before {
+	content: "\E90C"
+}
+
+.didi-icons-customer_service:before {
+	content: "\E90D"
+}
+
+.didi-icons-dial:before {
+	content: "\E90E"
+}
+
+.didi-icons-dislike:before {
+	content: "\E90F"
+}
+
+.didi-icons-driver:before {
+	content: "\E910"
+}
+
+.didi-icons-error_none:before {
+	content: "\E911"
+}
+
+.didi-icons-error:before {
+	content: "\E912"
+}
+
+.didi-icons-find:before {
+	content: "\E913"
+}
+
+.didi-icons-gift:before {
+	content: "\E914"
+}
+
+.didi-icons-help:before {
+	content: "\E915"
+}
+
+.didi-icons-home:before {
+	content: "\E916"
+}
+
+.didi-icons-information:before {
+	content: "\E917"
+}
+
+.didi-icons-landmark:before {
+	content: "\E918"
+}
+
+.didi-icons-left:before {
+	content: "\E919"
+}
+
+.didi-icons-leftbar_all:before {
+	content: "\E91A"
+}
+
+.didi-icons-leftbar_user:before {
+	content: "\E91B"
+}
+
+.didi-icons-like:before {
+	content: "\E91C"
+}
+
+.didi-icons-loading:before {
+	content: "\E91D"
+}
+
+.didi-icons-mail:before {
+	content: "\E91E"
+}
+
+.didi-icons-mall:before {
+	content: "\E91F"
+}
+
+.didi-icons-man:before {
+	content: "\E920"
+}
+
+.didi-icons-map_location:before {
+	content: "\E921"
+}
+
+.didi-icons-men:before {
+	content: "\E922"
+}
+
+.didi-icons-moment:before {
+	content: "\E923"
+}
+
+.didi-icons-news:before {
+	content: "\E924"
+}
+
+.didi-icons-notice:before {
+	content: "\E925"
+}
+
+.didi-icons-old:before {
+	content: "\E926"
+}
+
+.didi-icons-phone:before {
+	content: "\E927"
+}
+
+.didi-icons-qq:before {
+	content: "\E928"
+}
+
+.didi-icons-qq2:before {
+	content: "\E929"
+}
+
+.didi-icons-question:before {
+	content: "\E92A"
+}
+
+.didi-icons-qzone:before {
+	content: "\E92B"
+}
+
+.didi-icons-recommend:before {
+	content: "\E92C"
+}
+
+.didi-icons-red:before {
+	content: "\E92D"
+}
+
+.didi-icons-reminder_lamp:before {
+	content: "\E92E"
+}
+
+.didi-icons-reminder:before {
+	content: "\E92F"
+}
+
+.didi-icons-right:before {
+	content: "\E930"
+}
+
+.didi-icons-service:before {
+	content: "\E931"
+}
+
+.didi-icons-setting:before {
+	content: "\E932"
+}
+
+.didi-icons-share:before {
+	content: "\E933"
+}
+
+.didi-icons-signal:before {
+	content: "\E934"
+}
+
+.didi-icons-sina_blog:before {
+	content: "\E935"
+}
+
+.didi-icons-star_s:before {
+	content: "\E936"
+}
+
+.didi-icons-star:before {
+	content: "\E937"
+}
+
+.didi-icons-trip:before {
+	content: "\E938"
+}
+
+.didi-icons-twomen:before {
+	content: "\E939"
+}
+
+.didi-icons-wallet:before {
+	content: "\E93A"
+}
+
+.didi-icons-wechat:before {
+	content: "\E93B"
+}
+
+.didi-icons-wechat2:before {
+	content: "\E93C"
+}
+
+.didi-icons-zhifubao:before {
+	content: "\E93D"
+}

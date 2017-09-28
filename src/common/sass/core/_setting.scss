@@ -1,0 +1,118 @@
+@charset "UTF-8";
+//-----------------------------------------------------	
+// setting scss
+//-----------------------------------------------------	
+
+
+// 开关设置
+//-----------------------------------------------------	
+$lte7:                  false !default; //是否兼容ie6-7
+$filter:                false !default; //是否为ie6-8开启css3滤镜兼容，常用于渐变背景 
+$printStyleSwitch:      false !default; //是否开启打印样式
+
+
+// font相关
+//-----------------------------------------------------	
+$baseFontSize:          14px !default;
+$baseLineHeight:        1.5 !default;
+$baseFontFamily:        PingFang SC,STHeitiSC-Light,Helvetica-Light,arial,sans-serif !default;
+
+$fontCn:                "SimSun"; //宋体
+$fontYaHei:             "Microsoft Yahei"; //微软雅黑
+$fontHeiTi:             "SimHei"; //黑体
+
+//rem base setting
+$remBaseFontSize:		75px !default;
+$remFallback: false !default;
+$remPxOnly: false !default;
+$exportBodyFont: true !default;
+
+
+// 滴滴滴基本设置
+
+
+// 元素上下间距
+//-----------------------------------------------------	
+$baseGap:               10px !default;
+
+
+// 基本颜色
+// color function : http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html
+// lighten($color, $amount)
+// darken($color, $amount)
+// opacify($color, $amount)
+// mix($color1, $color2[, $amount])
+//-----------------------------------------------------	
+$black:                 #000 !default;
+$gray:                  #ccc !default;
+$white:                 #fff !default;
+$primary:               #0078E7 !default;//主色
+
+
+
+
+// 自定义的颜色
+
+
+
+// link
+//-----------------------------------------------------	
+// 如果只有一个值则滑过的值为这个值的darken 5%，如果
+// 有两个值则第二个值为滑过的值
+$linkColor:             #08c !default;
+
+
+
+
+//颜色定义规范
+$color-orange : #fa8919 !default;
+$color-dark-orange : #e67e17 !default;
+$color-light-orange : #f93 !default;
+$color-white : #fff;
+$color-light-grey-ssss : #fafafa !default;
+$color-light-grey-sss : #f0f0f0 !default;
+$color-light-grey-ss-l : #ebebeb !default;
+$color-light-grey-ss : #e5e5e5 !default;
+$color-light-grey-s : #ccc !default;
+$color-light-grey : #adadad !default;
+$color-link-grey : #878787 !default;
+$color-grey : #666 !default;
+$color-dark-grey : #333 !default;
+$color-red : #fa2419 !default;
+$color-red-s : #fff6f6 !default;
+$color-green : #52b786 !default;
+$color-red-start : #e37479 !default;
+
+
+
+// scaffolding
+//-----------------------------------------------------	
+$bodyBgColor:           #f8f8f8  !default;	//didi
+$textColor:             #989A9C !default;	//didi
+$border-color:          #dedede!default;
+$border-top-color:      $border-color!default;
+$border-bottom-color:   $border-color!default;
+$border-left-color:     $border-color!default;
+$border-right-color:    $border-color!default;
+
+
+// placeholder
+//-----------------------------------------------------	
+// 变量分别为：是否输出表单的占位符placeholder样式，文本色
+$placeholder:           true $color-light-grey-s !default;
+
+
+
+// radius
+//-----------------------------------------------------	
+$baseRadius:            5px !default;
+$smallRadius:           3px !default;
+
+
+// z-index
+//-----------------------------------------------------	
+$zindexDropdown:        1000 !default;
+$zindexFixedTopbar:     1010 !default;
+$zindexTooltip:         1020 !default;
+$zindexAlert:           1030 !default;
+$zindexModal:           1100 !default;
