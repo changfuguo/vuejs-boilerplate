@@ -9,8 +9,8 @@ const action = argv.action;
 //html页面
 var htmlTemplate = './src/views/template.ejs';
 var chunks = ['todos', 'todos_scss'];
-var __inject = (env == 'dev' && action =='runtime')?true: false;
-console.log(env, action)
+var __inject = (env == 'dev' && action =='runtime') ? true : false;
+console.log('> run ENV:' +  env + ' ACTION: ' + action);
 var htmlConfig = [
     {
         filename: 'index.html',

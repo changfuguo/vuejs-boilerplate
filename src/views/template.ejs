@@ -35,22 +35,10 @@
     <script type="text/javascript">
         window.__sourceMap = <%= JSON.stringify(htmlWebpackPlugin.files.sourceMap) %>;
     </script>
-    <% if(htmlWebpackPlugin.options.inject) { %>
-       <% _.forEach(htmlWebpackPlugin.options.assets.css, function(css) { %>
-           <% if(css.key == 'todos_scss.css') { %>
-            <link rel="stylesheet" type="text/css" href="<%- css.url %>">
-            <%};%>
-        <% }); %>
-    <% } %>
 <body data-ctr-page = "pageview" class="fullscreen">
 <div id="application" class="view" ></div>
 <div style="width:0;height:0">
     <% if(htmlWebpackPlugin.options.inject) { %>
-       <% _.forEach(htmlWebpackPlugin.options.assets.js, function(js) { %>
-           <% if(js.key == 'todos.js') { %>
-                <script type="text/javascript" src="<%- js.url %>"></script>
-            <%};%>
-        <% }); %>
         <% _.forEach(htmlWebpackPlugin.options.assets.js, function(js) { %>
            <% if(js.key == 'todos_lib.js') { %>
                 <script type="text/javascript" src="<%- js.url %>"></script>
