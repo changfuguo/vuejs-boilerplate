@@ -1,3 +1,4 @@
-body{
-	color:red;
-}
+@import "../../common/sass/core/_index.scss";
+@import "./app.scss";
+@import "./app.scss";
+@import "./pages/home.scss";

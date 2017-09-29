@@ -1,0 +1,74 @@
+.todo-home{
+    background: #fff;
+    @include dpr2-border(all, 1px, solid, #666);
+    max-width: rem(414px);
+    box-sizing: border-box;
+    .todo-list-header{
+        @include dpr2-border-bottom(1px, solid, #666);
+        font-size: rem(36px);
+        font-weight: bold;
+        height: rem(50px);
+        line-height: rem(50px);
+        color: #666;
+        text-align: center;
+    }
+    .todo-list-delete{
+        @include dpr2-border-bottom(1px, solid, #666);
+        font-size: rem(16px);
+        height: rem(40px);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        button{
+            border: none;
+            border-radius: rem(3px);
+            padding: rem(4px) rem(7px);
+            line-height: rem(25px);
+            background: #444;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+    .todo-list-add {
+        @include dpr2-border-bottom(1px, solid, #666);
+        font-size: rem(16px);
+        height: rem(40px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        #text{
+            color: #444;
+            @include dpr2-border(all, 1px, solid, #666);
+            padding: rem(3px) rem(3px);
+            line-height: rem(25px);
+        }
+        #checkbox{
+            margin-right: rem(10px);
+        }
+    }
+    .todo-list-wrapper{
+        .todo-list-item {
+            @include dpr2-border-bottom(1px, solid, #666);
+            &:last-child{
+                border: none;
+            }
+            color: #444;
+            font-size: rem(18px);
+            padding: 0 rem(12px);
+            height: rem(40px);
+            line-height: rem(40px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &.isChecked{
+                background: #999;
+                color: #fff;
+            }
+            &.no-item{
+                justify-content: center;
+                font-size: rem(16px);
+                color: #777;
+            }
+        }
+    }
+}
