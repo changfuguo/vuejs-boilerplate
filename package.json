@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.xiaojukeji.com:changfuguo/wer-template.git"
+    "url": "https://github.com/changfuguo/vuejs-boilerplate.git"
   },
   "keywords": [
     "vue",
