@@ -1,4 +1,4 @@
-import { ADD_ITEM, DELETE_ITEM, UPDATE_ITEM} from '../constants';
+import { ADD_ITEM, DELETE_ITEM, DELETE_ALL_ITEM, CHECK_ITEM, DELETE_SELECTED} from '../constants';
 
 const state = {
     list: []
@@ -11,41 +11,46 @@ const getters = {
 };
 
 const actions = {
-    doAddItem({commit, state, dispatch}, {name, finished}) {
-        commit(ADD_ITEM, {name, finished});
+    doAddItem({commit, state, dispatch}, {value, select}) {
+        commit(ADD_ITEM, {value, select});
     },
-    doUpdateItem({commit, state, dispatch}, {name, finished}) {
-        commit(UPDATE_ITEM, {name, finished});
+    checkItem({commit, state, dispatch}, index){
+        commit(CHECK_ITEM, index);
     },
-    doDeleteItem({commit, state, dispatch}, {name, finished}) {
-        commit(DELETE_ITEM, {name});
+    doDeleteSelected({commit, state, dispatch}){
+        commit(DELETE_SELECTED);
+    },
+    doDeleteAllItem({commit, state, dispatch}, index) {
+        commit(DELETE_ALL_ITEM);
+    },
+    doDeleteItem({commit, state, dispatch}, index) {
+        commit(DELETE_ITEM, index);
     }
 };
 
 const mutations = {
     [ADD_ITEM] (state, data) {
-        let list = state.list;
-        let {name, finished} = data;
-        if (list.findIndex(item => item.name == data.name) == -1) {
-            list.push({
-                name,
-                finished
-            });
-        }
+        state.list = [...state.list, data];
     },
-    [UPDATE_ITEM] (state, index, data) {
-        let list = state.list;
-        let item = list[index];
-        if (item) {
-            item.name = data.name;
-            item.finished = data.finished;
-        }
-
-        state.list = list.slice(0);
+    [CHECK_ITEM] (state, index) {
+        let list = [...state.list];
+        list[index] = Object.assign({}, state.list[index], {select: !state.list[index].select});
+        state.list = list;
+    },
+    [DELETE_SELECTED] (state) {
+        let list = [...state.list];
+        list = list.filter(function(item){
+            return !item.select;
+        });
+        state.list = list;
+    },
+    [DELETE_ALL_ITEM] (state) {
+        state.list = [];
     },
     [DELETE_ITEM] (state, index) {
-        state.list.splice(index, 1);
-        state.list = list.slice(0);
+        let list = [...state.list];
+        list.splice(index, 1);
+        state.list = list;
     }
 };
 
