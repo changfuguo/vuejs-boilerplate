@@ -1,36 +1,13 @@
-# vuejs-boilerplate
-vuejs boilerplate for  vue2.x and webpack 3.x
-
- > 该脚手架是自己team在一年时间里实践总结出来的，实际情况可能比这个还复杂，还要考虑hybrid和bridge这种情况，这里抽象出来几个常用功能，各位自取
-
-## 一、脚手架新特征
-
-1、支持多个lib、css和业务文件的分离
-
-> 不采用commonChunk插件，单独为lib和css生成一个配置文件。
-> dev环境下自动注入页面，保证css的热更新起作用。其他环境下
-> 单独打包手动注入css到view
-
-2、本地server + hot update + data mock
-
-> 本地启动server利用热更新插件来实现无刷新开发（不是新东西）
-> 本地通过简单配置可以实现数据的mock，详见代码。
-> 最主要的也可以来proxy
-
-3、支持数据写入localstorage
-
-> 这里采用了ele的bowl库实现js写入localstorage，上线效果domready时间减少了23%（1.97->1.51）
-
-
-## 二、目录结构
-
-```
+.
+├── LICENSE
+├── README.md
+├── a.txt
 ├── build
 │   ├── compile
-│   │   ├── common #抽象出来的公共模块，其中css打包dev不能用，否则热更新就丢了
+│   │   ├── common
 │   │   │   ├── webpack.css.js
 │   │   │   └── webpack.lib.js
-│   │   ├── logic #
+│   │   ├── logic
 │   │   │   ├── webpack.base.js
 │   │   │   ├── webpack.dev.js
 │   │   │   ├── webpack.pre.js
@@ -53,7 +30,37 @@ vuejs boilerplate for  vue2.x and webpack 3.x
 │       └── buildPage.js
 ├── dist
 │   ├── dev
+│   │   ├── chunk.home.74b4aca0532e98b8023d.js
+│   │   ├── chunk.home.74b4aca0532e98b8023d.js.map
+│   │   ├── chunk.other.74b4aca0532e98b8023d.js
+│   │   ├── chunk.other.74b4aca0532e98b8023d.js.map
+│   │   ├── index.html
+│   │   ├── manifest.dep.todos_lib.json
+│   │   ├── static
+│   │   │   └── js
+│   │   │       └── polyfill.min.js
+│   │   ├── todos.74b4aca0532e98b8023d.js
+│   │   ├── todos.74b4aca0532e98b8023d.js.map
+│   │   ├── todos_lib.d3b26b4b.js
+│   │   ├── todos_lib.d3b26b4b.js.gz
+│   │   ├── todos_scss.6700e3e5.css
+│   │   ├── todos_scss.742b186a.js
+│   │   ├── todos_scss.74b4aca0532e98b8023d.js
+│   │   └── todos_scss.74b4aca0532e98b8023d.js.map
 │   └── prod
+│       ├── chunk.home.23b85507.js
+│       ├── chunk.other.e70234f4.js
+│       ├── index.html
+│       ├── manifest.dep.todos_lib.json
+│       ├── static
+│       │   └── js
+│       │       └── polyfill.min.js
+│       ├── todos.2c298f21.js
+│       ├── todos.2c298f21.js.gz
+│       ├── todos_lib.d3b26b4b.js
+│       ├── todos_lib.d3b26b4b.js.gz
+│       ├── todos_scss.6700e3e5.css
+│       └── todos_scss.742b186a.js
 ├── package.json
 ├── postcss.config.js
 ├── server
@@ -133,5 +140,4 @@ vuejs boilerplate for  vue2.x and webpack 3.x
 │       └── template.ejs
 └── webpack.config.js
 
-```
-
+41 directories, 99 files
