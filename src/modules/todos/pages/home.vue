@@ -58,11 +58,7 @@
                 }
             })
         },
-<<<<<<< HEAD
         mounted() {
-=======
-        mounted: function(){
->>>>>>> changfuguo/master
         }
     };
 </script>
