@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="todo-home">
-    todo-home
+    todo-home信息安抚123大师傅123123ssasdfasdfa
     </div>
 </template>
 <script type="text/babel">
@@ -25,7 +25,6 @@
 
         },
         mounted: function(){
-            alert(1123);
         }
     };
 </script>
