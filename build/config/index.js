@@ -3,8 +3,6 @@ const env = require('yargs').argv.env || 'dev';
 const BASE_PATH = path.join(__dirname, '../..');
 
 
-let OFFLINE_PASSPORT_JS = '//passport.rdtest.didichuxing.com/static/login/0.3.20/login.test.js';
-let ONLINE_PASSPORT_JS = '//webapp.didistatic.com/static/webapp/shield/z/login/login/0.3.21/login.min.js';
 module.exports = Object.assign({
     publicPath:'/',
     assetsPath: './',
@@ -19,19 +17,19 @@ module.exports = Object.assign({
     },
     scripts: {
         local: {
-            js:[{ key: 'login', url: OFFLINE_PASSPORT_JS}],
+            js:[], //这里是{key,url}的形式
             css:[]
         },
         test: {
-            js:[{ key: 'login', url: OFFLINE_PASSPORT_JS}],
+            js:[],
             css:[]
         },
         pre: {
-            js:[{ key: 'login', url: OFFLINE_PASSPORT_JS}],
+            js:[],
             css:[]
         },
         online: {
-            js: [{ key: 'login', url: ONLINE_PASSPORT_JS}],
+            js: [],
             css:[]
         }
     },

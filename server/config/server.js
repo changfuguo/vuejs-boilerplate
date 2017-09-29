@@ -1,7 +1,7 @@
 module.exports = {
     port: 3333,
     proxy: {
-    	host: 'http://10.95.118.194:13001/'
+    	host: 'http://127.0.0.1:8888/'
     }
 
 }
