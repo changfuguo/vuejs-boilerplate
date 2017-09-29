@@ -83,7 +83,7 @@ function getIPAdress(){
 }
 
 
-const testServer = 'http://10.95.118.194:13001/';
+const testServer = 'http://127.0.0.1:8888/';
 app.use('/v2/*', function(req, res) {
     var url = proxyServer + req.originalUrl;
     console.log('> ' + url);
