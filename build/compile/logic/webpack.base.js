@@ -5,7 +5,7 @@ const TransferWebpackPlugin = require('transfer-webpack-plugin');
 const WebpackAssetsManifest =  require('webpack-assets-manifest');
 
 const InlineManifestPlugin = require('../../plugins/inline-manifest-plugin');
-
+const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
 //system modules
 const path = require('path');
 const fs = require('fs');
@@ -40,7 +40,12 @@ const webpackBaseConfig = {
         new InlineManifestPlugin({
             manifestPath: path.join(BASE_PATH, 'build', 'manifest', 'manifest.main.json')
         }),
-        new webpack.optimize.ModuleConcatenationPlugin()
+        new webpack.optimize.ModuleConcatenationPlugin(),
+        // new ChunkManifestPlugin({
+        //   filename: 'manifest.json',
+        //   manifestVariable: 'webpackManifest',
+        //   inlineManifest: false
+        // })
      ],
     resolve: {
         modules: [

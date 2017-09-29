@@ -137,7 +137,27 @@ vuejs boilerplate for  vue2.x and webpack 3.x
 
 三、打包流程
 
+1、lib文件
+
+lib文件单独打包，主要是不经常变化，并且无依赖
+
+2、css文件
+
+css如果合并在vue中打包，会多出来一个js，这个js其实不需要；由于***extractTextPlugin***这个插件无法抽取异步加载文件中的css，所以单独对css打包。
+
+> 注意的是在开发环境下不对css单独打包，主要单独打包无法应用热更新
 
 
+3、业务文件打包
+
+业务文件在开发环境下,先构建lib，通过dllPlugin产出manifest；将css和业务文件的entry合并打包；
+
+在非dev环境下，先打包lib和css，将打包后的fileMap数据通过`html-webpack-plugin` 写入到模板上
+
+4、ls缓存
+
+第三部已经写入了fileMap结构，故可以根据生成的md5来做ls的写入和更新
+
+> 注意在dev环境下没必要做ls这个，如果想在开发阶段看，那么先build dev的代码到dist/dev，启动server时根据传入参数，不启动热更新直接设置dist/env为静态目录
 
 
