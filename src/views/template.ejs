@@ -37,8 +37,8 @@
     </script>
     <% if(htmlWebpackPlugin.options.inject) { %>
        <% _.forEach(htmlWebpackPlugin.options.assets.css, function(css) { %>
-           <% if(js.key == 'todos_scss.css') { %>
-                <script type="text/javascript" src="<%- css.url %>"></script>
+           <% if(css.key == 'todos_scss.css') { %>
+            <link rel="stylesheet" type="text/css" href="<%- css.url %>">
             <%};%>
         <% }); %>
     <% } %>
@@ -103,12 +103,6 @@
         })();
         </script>
     <%}%>
-
-    <% _.forEach(htmlWebpackPlugin.options.assets.js, function(js) { %>
-        <% if(js.key == 'login') { %>
-            <script type="text/javascript" src="<%- js.url %>"></script>
-        <%};%>
-    <% }); %>
 </div>
 </body>
 </html>

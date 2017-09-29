@@ -90,8 +90,6 @@ function getWebpackConfig(env) {
             libStats.map(function(script) {
                 (script != '') && buildPage.addScript(script);
             });
-
-            
             cssStats.map(function(script) {
                 (script != '') && buildPage.addStyle(script);
             });

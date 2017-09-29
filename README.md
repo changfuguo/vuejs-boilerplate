@@ -30,45 +30,45 @@ vuejs boilerplate for  vue2.x and webpack 3.x
 │   │   ├── common #抽象出来的公共模块，其中css打包dev不能用，否则热更新就丢了
 │   │   │   ├── webpack.css.js
 │   │   │   └── webpack.lib.js
-│   │   ├── logic #
+│   │   ├── logic #四种环境的打包文件
 │   │   │   ├── webpack.base.js
 │   │   │   ├── webpack.dev.js
 │   │   │   ├── webpack.pre.js
 │   │   │   ├── webpack.prod.js
 │   │   │   └── webpack.qa.js
 │   │   └── webpack.compile.js
-│   ├── config
+│   ├── config # 编译期间需要的配置
 │   │   ├── dev.env.js
 │   │   ├── index.js
 │   │   ├── pre.env.js
 │   │   ├── prod.env.js
 │   │   └── qa.env.js
-│   ├── manifest
+│   ├── manifest #产出的md5的map文件
 │   │   ├── manifest.css.json
 │   │   ├── manifest.lib.json
 │   │   └── manifest.main.json
-│   ├── plugins
+│   ├── plugins #内敛插件
 │   │   └── inline-manifest-plugin.js
-│   └── tools
+│   └── tools # 给htmlplugin用的文件
 │       └── buildPage.js
-├── dist
+├── dist #产出文件
 │   ├── dev
 │   └── prod
 ├── package.json
-├── postcss.config.js
-├── server
-│   ├── config
+├── postcss.config.js #postcss配置
+├── server #本地server
+│   ├── config #本地server配置
 │   │   ├── route.js
 │   │   └── server.js
 │   ├── index.js
-│   ├── mock
+│   ├── mock #mock的数据文件夹
 │   │   └── realtime.js
-│   ├── routes.js
-│   └── views
+│   ├── routes.js #路由配置，主要mock数据
+│   └── views 
 │       └── index.html
 ├── src
-│   ├── common
-│   │   ├── components
+│   ├── common #业务文件
+│   │   ├── components #组件
 │   │   │   └── toast
 │   │   │       ├── i-correct.png
 │   │   │       ├── i-error.png
@@ -78,15 +78,15 @@ vuejs boilerplate for  vue2.x and webpack 3.x
 │   │   │       ├── toast.js
 │   │   │       ├── toast.scss
 │   │   │       └── toast.vue
-│   │   ├── directives
+│   │   ├── directives #指令
 │   │   │   ├── index.js
 │   │   │   ├── index.scss
 │   │   │   ├── pull-refresh.js
 │   │   │   └── pull-refresh.scss
-│   │   ├── libs
-│   │   ├── mixins
-│   │   │   └── emitter.js
-│   │   └── sass
+│   │   ├── libs #库文件
+│   │   ├── mixins #mix文件
+│   │   │   └── emitter.js 
+│   │   └── sass #sass基础文件
 │   │       ├── base.scss
 │   │       ├── core
 │   │       │   ├── _css3.scss
@@ -98,15 +98,15 @@ vuejs boilerplate for  vue2.x and webpack 3.x
 │   │       │   ├── _reset.scss
 │   │       │   └── _setting.scss
 │   │       └── icon.scss
-│   ├── config
+│   ├── config #运行期间的参数，注入到页面的变量
 │   │   ├── base.js
 │   │   ├── dev.env.js
 │   │   ├── index.js
 │   │   ├── pre.env.js
 │   │   ├── prod.env.js
 │   │   └── qa.env.js
-│   ├── modules
-│   │   └── todos
+│   ├── modules #模块，下面的每个文件夹都是一个spa
+│   │   └── todos #
 │   │       ├── app.scss
 │   │       ├── app.vue
 │   │       ├── components
@@ -123,7 +123,7 @@ vuejs boilerplate for  vue2.x and webpack 3.x
 │   │               ├── home.js
 │   │               ├── index.js
 │   │               └── other.js
-│   ├── static
+│   ├── static #静态文件会拷贝到打包目录
 │   │   ├── css
 │   │   ├── html
 │   │   ├── images
@@ -134,4 +134,10 @@ vuejs boilerplate for  vue2.x and webpack 3.x
 └── webpack.config.js
 
 ```
+
+三、打包流程
+
+
+
+
 

@@ -23,9 +23,9 @@ const MESSAGE = {
     reset: '下拉可以刷新'
 };
 
-const DISTANCE_TO_REFRESH = 40 * dpr;
-const DISTANCE_TO_LOAD_MORE = 40 * dpr;
-const DISTANCE_TO_AUTO_LOAD_MORE = -20 * dpr;
+const DISTANCE_TO_REFRESH = 40 ;
+const DISTANCE_TO_LOAD_MORE = 40 ;
+const DISTANCE_TO_AUTO_LOAD_MORE = -20 ;
 
 let staticParentEle;
 let onRefresh = function () {};

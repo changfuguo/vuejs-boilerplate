@@ -25,7 +25,7 @@
 
         },
         mounted: function(){
-            
+            alert(1123);
         }
     };
 </script>
