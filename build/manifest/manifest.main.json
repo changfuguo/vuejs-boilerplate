@@ -1,5 +1,10 @@
 {
-  "home.js": "chunk.home.23b85507.js",
-  "other.js": "chunk.other.e70234f4.js",
-  "todos.js": "todos.2c298f21.js"
+  "home.js": "chunk.home.352e8014301d86ce362d.js",
+  "home.js.map": "chunk.home.352e8014301d86ce362d.js.map",
+  "other.js": "chunk.other.352e8014301d86ce362d.js",
+  "other.js.map": "chunk.other.352e8014301d86ce362d.js.map",
+  "todos.js": "todos.352e8014301d86ce362d.js",
+  "todos.js.map": "todos.352e8014301d86ce362d.js.map",
+  "todos_scss.js": "todos_scss.352e8014301d86ce362d.js",
+  "todos_scss.js.map": "todos_scss.352e8014301d86ce362d.js.map"
 }

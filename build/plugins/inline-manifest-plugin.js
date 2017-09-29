@@ -46,7 +46,7 @@ InlineManifestPlugin.prototype.apply = function (compiler) {
                         }
                     })
                 }
-               Object.keys(pageInfo).map(function(attr, index) {
+                Object.keys(pageInfo).map(function(attr, index) {
                     if (/\.(js|css)$/.test(attr)) {
                         original[attr] = pageInfo[attr]
                     }
