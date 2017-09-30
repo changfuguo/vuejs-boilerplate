@@ -14,7 +14,7 @@
             <template v-for="(item, index) in list">
                 <li class="todo-list-item" :class="{'isChecked': item.select}" @click="checkItem(index)">
                     <span>{{item.value}}</span>
-                    <span @click="_doDeleteItem($event, index)">X</span>
+                    <span @click.stop="doDeleteItem(index)">X</span>
                 </li>
             </template>
             <li class="todo-list-item no-item" v-if="!hasItem">没有更多项目</li>  
@@ -37,15 +37,7 @@
 
         },
         methods: {
-            ...mapActions(['doAddItem', 'checkItem', 'doDeleteSelected', 'doDeleteItem', 'doDeleteAllItem']),
-            _doDeleteItem(e, index){
-                if ( e && e.stopPropagation ) {
-                    e.stopPropagation();
-                } else { 
-                    window.event.cancelBubble = true;
-                };
-                this.doDeleteItem(index);
-            }
+            ...mapActions(['doAddItem', 'checkItem', 'doDeleteSelected', 'doDeleteItem', 'doDeleteAllItem'])           
         },
         watch: {
 
