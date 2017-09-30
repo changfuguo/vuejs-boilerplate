@@ -1,1 +1,10 @@
-{}
+{
+  "home.js": "chunk.home.6b59d810d98a50d2ac77.js",
+  "home.js.map": "chunk.home.6b59d810d98a50d2ac77.js.map",
+  "other.js": "chunk.other.6b59d810d98a50d2ac77.js",
+  "other.js.map": "chunk.other.6b59d810d98a50d2ac77.js.map",
+  "todos.js": "todos.6b59d810d98a50d2ac77.js",
+  "todos.js.map": "todos.6b59d810d98a50d2ac77.js.map",
+  "todos_scss.js": "todos_scss.6b59d810d98a50d2ac77.js",
+  "todos_scss.js.map": "todos_scss.6b59d810d98a50d2ac77.js.map"
+}
